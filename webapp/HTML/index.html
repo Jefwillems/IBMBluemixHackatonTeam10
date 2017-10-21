@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Timber</title>
+    <title>Less waste, no food</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -27,6 +27,7 @@
     <script type="text/javascript" src="js/myscript.js"></script>
     <script src="js/sorting.js" type="text/javascript"></script>
     <script src="js/jquery.isotope.js" type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTjd3m_6xa7GrskbSlA8FfLmM_i7BywEo"></script>
     <!--script type="text/javascript" src="js/jquery.nav.js"></script-->
 
 
@@ -66,7 +67,7 @@
                                     <li><a href="#stock">stock</a></li>
                                     <li><a href="#contact">Incoming Supplies</a></li>
                                     <li><a href="#notifications">Notifications</a></li>
-                                    <li class="last">
+                                    <li class="last" >
                                         Poverello vzw
                                     </li>
                                 </ul>
@@ -158,16 +159,16 @@
                         <thead>
                             <tr>
                                 <th class="mdl-data-table__cell--non-numeric">Goods</th>
-                                <th>quantity</th>
-                                <th>time of arrival</th>
+                                <th>Quantity</th>
+                                <th>Delivery duration</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="mdl-data-table__cell--non-numeric">Apples</td>
                                 <td>120 </td>
-                                <td>22-Oct-17</td>
-                                <td>10:25 am</td>
+                               
+                                <td id="time"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -352,7 +353,7 @@
         });
     </script>
     <script>
-        var tableHidden = "<table class='mdl-data-table mdl-js-data-table mdl-shadow--2dp'><thead> <tr><th class='mdl-data-table__cell--non-numeric'>Goods</th><th>quantity</th><th>time of arrival</th></tr> </thead><tbody><tr><td class='mdl-data-table__cell--non-numeric'>Apples</td><td>120 </td><td>10:25 am</td></tr></tbody></table>" ;
+        var tableHidden = "<table class='mdl-data-table mdl-js-data-table mdl-shadow--2dp'><thead> <tr><th class='mdl-data-table__cell--non-numeric'>Goods</th><th>quantity</th><th>Delivery duration</th></tr> </thead><tbody><tr><td class='mdl-data-table__cell--non-numeric'>Apples</td><td>120 </td></tr></tbody></table>" ;
         
     $(".showTable").on('click',function(event){
         $("#forTable").append(tableHidden);
