@@ -13,7 +13,7 @@ participant User identified by email {
 asset UserAsset identified by email {
   o String email
   o String name
-  --> TokenAsset[] tokens
+  --> TokenAsset[] tokens optional
 }
 
 asset TokenAsset identified by assetId {
