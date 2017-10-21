@@ -21,7 +21,7 @@ $('#sendFunds').on('click', function (event) {
             "receiving": "resource:xyz.jefwillems.UserAsset#willems.jef@outlook.com",
             "timestamp": "2017-10-21T12:49:48.357Z"
         },
-        function (err, data) {
-
+        function (data) {
+            console.log(data);
         });
 });
