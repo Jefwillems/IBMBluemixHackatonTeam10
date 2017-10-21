@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "food tokens",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "arch":"composer archive create -a dist/food.bna --sourceType dir --sourceName ."
   },
   "author": "Group 10",
   "email": "willems.jef@outlook.com",
