@@ -19,7 +19,6 @@ var Poverello = {
     City: "Ghent",
     Street: "Komijnstraat",
     Number: 5,
-    Street: "",
     NeededFood : null
 
 }
@@ -34,14 +33,18 @@ var BroederlijkDelen= {
 var NGOs = [RedCross, Oxfam, Poverello, BroederlijkDelen];
 
 
-var optimalChoice = function (expirationDate, maxRange, neededGoods, stock) {
-    
+var optimalChoice = function (expirationDate, maxRange, neededFood, stock) {
+
+    // sort array volgens tijdstraject
     if (expirationDate.day > 5) {
-        return NGOs.firstChild;
+        if(neededFood===stock)
+            return NGOs.firstChild;
     }
     else if (expirationDate.day > 2) {
         for (var ngo in NGOs) {
-            if (ngo.NeededFood === stock);
+            if (ngo.NeededFood === stock) {
+                return ngo;
+            }
         }
     } else {
         return NGOs.firstChild;
