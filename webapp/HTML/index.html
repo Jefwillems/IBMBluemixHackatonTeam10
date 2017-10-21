@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
     <!-- Material Design Lite Font Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="css/snackbar.css">
 
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
@@ -63,7 +63,8 @@
                                 <ul id="menu">
                                     <li class="active"><a href="#home">Home</a></li>
                                     <li><a href="#stock">stock</a></li>
-                                    <li><a href="#contact">Meldingen</a></li>
+                                    <li><a href="#contact">Incoming Supplies</a></li>
+                                    <li><a href="#notifications">Notifications</a></li>
                                     <li class="last">
                                         Poverello vzw
                                     </li>
@@ -73,6 +74,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div class="row wrap">
                     <div class="col-md-12 gallery">
@@ -95,11 +97,11 @@
         </div>
     </div>
 
-    <div id="stock" style="margin-top: 50px; margin-bottom: 50px">
-        <div >
+    <div id="stock" style="margin-top: 50px">
+        <div>
             <div class="container">
                 <div class="row">
-                    <h3>Stock</h3>
+                    <h3 class="dropbtn">Stock</h3>
                     <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                         <thead>
                             <tr>
@@ -133,29 +135,53 @@
             </div>
         </div>
     </div>
-    <div>
+    <div id="contact" style="margin-top: 50px; margin-bottom: 50px">
         <div>
-            <div>
-                <button class="dropbtn"><h3>Incoming supply</h3></button>
-                <table>
-                    <th>Goods</th>
-                    <tr>
-                        <th>quantity</th>
-                        <th>approximate time of arrival</th>
-                    </tr>
-                    <tr>
-                        <td>Appels</td>
-                        <td>300units</td>
-                        <td>10:25 am</td>
-                    </tr>
-                </table>
-            </div>
-            <div><button class="dropbtn">
-                <h3>History</h3 >
-                </button>
+            <div class="container">
+                <div class="row" id="forTable">
+                    <h3 class="dropbtn">Incoming supply</h3>
+                    
+                </div>
             </div>
         </div>
     </div>
+    <div id="notifications" style="margin-top: 50px; margin-bottom: 50px">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <h3 class="dropbtn">Notifications</h3>
+                    <p>
+                        <button class="btn btn-primary showTable" id="sentFunds">Accept</button>
+                    </p>
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                        <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Goods</th>
+                                <th>quantity</th>
+                                <th>time of arrival</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Apples</td>
+                                <td>120 </td>
+                                <td>22-Oct-17</td>
+                                <td>10:25 am</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
 
 
 
@@ -293,6 +319,13 @@
             });
 
         });
+    </script>
+    <script>
+        var tableHidden = "<table class='mdl-data-table mdl-js-data-table mdl-shadow--2dp'><thead> <tr><th class='mdl-data-table__cell--non-numeric'>Goods</th><th>quantity</th><th>time of arrival</th></tr> </thead><tbody><tr><td class='mdl-data-table__cell--non-numeric'>Apples</td><td>120 </td><td>10:25 am</td></tr></tbody></table>" ;
+        
+    $(".showTable").on('click',function(event){
+        $("#forTable").append(tableHidden);
+    })
     </script>
 </body>
 
