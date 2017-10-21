@@ -28,40 +28,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingEnd="16dp"
-        android:paddingStart="16dp">
+        android:paddingStart="16dp"
+        android:paddingTop="70dp"
+        android:paddingBottom="15dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="address: " />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="0xA6fEBbFe2F3eF562BD11C4Ba7d"
-            android:textSize="14dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp">
+            android:text="company name: "
+            android:textSize="20dp"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="company name: " />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Colruyt" />
+            android:text="Colruyt"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"/>
     </LinearLayout>
 
 
@@ -70,19 +54,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingEnd="16dp"
-        android:paddingStart="16dp">
+        android:paddingStart="16dp"
+        android:paddingBottom="15dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Token amount: " />
+            android:text="Token amount: "
+            android:textSize="20dp"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="65" />
+            android:layout_weight="1"
+            android:text="65"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"/>
     </LinearLayout>
 
 
