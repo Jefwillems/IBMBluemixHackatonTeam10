@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NoWaste</string>
+    <string name="scan">scan</string>
+    <string name="token">token</string>
+    <string name="capture">capture</string>
+    <string name="fruit">fruit</string>
+    <string name="title_activity_result">ResultActivity</string>
+</resources>

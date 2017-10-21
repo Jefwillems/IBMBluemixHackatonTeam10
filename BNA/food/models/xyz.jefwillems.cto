@@ -1,0 +1,27 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace xyz.jefwillems
+
+participant User identified by email {
+  o String email
+  o String name
+  --> TokenAsset[] tokens
+}
+
+asset TokenAsset identified by assetId {
+  o String assetId
+  o String value
+  o String validTill
+}
+
+/*transaction ChangeAssetValue {
+  o String newValue
+  --> Asset relatedAsset
+}*/
+
+transaction transactionName {
+  o Long amount
+  --> User receiving
+}
