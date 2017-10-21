@@ -5,19 +5,66 @@
 
 /**
  * Sample transaction
- * @param {xyz.jefwillems.ChangeAssetValue} changeAssetValue
+ * @param {xyz.jefwillems.AddFunds} addFunds
  * @transaction
  */
-function onChangeAssetValue(changeAssetValue) {
+function onAddFunds(addFunds) {
     var assetRegistry;
-    var id = changeAssetValue.relatedAsset.assetId;
-    return getAssetRegistry('xyz.jefwillems.SampleAsset')
-        .then(function(ar) {
-            assetRegistry = ar;
+    var tokenRegistry;
+    var id = addFunds.receiving.email;
+    return getAssetRegistry('xyz.jefwillems.UserAsset')
+        .then(function (reg) {
+            assetRegistry = reg;
             return assetRegistry.get(id);
         })
-        .then(function(asset) {
-            asset.value = changeAssetValue.newValue;
-            return assetRegistry.update(asset);
+        .then(function (user) {
+            getAssetRegistry('xyz.jefwillems.TokenAsset')
+                .then(function (regi) {
+                    tokenRegistry = regi;
+                    var factory = getFactory();
+                    tokenRegistry.getAll().then(function (all) {
+                        var highest = -1;
+                        for (var i = 0; i < all.length; i++) {
+                            var l = parseInt(all[i].assetId);
+                            if (l > highest) {
+                                highest = l;
+                            }
+                            console.warn('highest', highest);
+                        }
+                        console.log('lastHighest: ', highest);
+                        var token = factory.newResource('xyz.jefwillems', 'TokenAsset', (highest + 1) + "");
+                        token.validTill = (new Date()).getTime();
+                        tokenRegistry.add(token);
+
+                        user.tokens.push(token);
+                        assetRegistry.update(user);
+                    });
+                });
+        });
+}
+
+/**
+ * Sample transaction
+ * @param {xyz.jefwillems.AddUser} addFunds
+ * @transaction
+ */
+function onAddUser(addUser) {
+    var userRegistry;
+    var email = addUser.email;
+    var name = addUser.name;
+    return getAssetRegistry('xyz.jefwillems.UserAsset')
+        .then(function (reg) {
+            userRegistry = reg;
+            var factory = getFactory();
+            userRegistry.exists(email).then(function (b) {
+                if (b) {
+                    return;
+                }
+                var newUser = factory.newResource('xyz.jefwillems', 'UserAsset', email);
+                newUser.name = name;
+                newUser.tokens = [];
+                userRegistry.add(newUser);
+            });
+
         });
 }
