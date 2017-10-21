@@ -22,6 +22,7 @@ function onAddFunds(addFunds) {
                 .then(function (regi) {
                     tokenRegistry = regi;
                     var factory = getFactory();
+                    //for (var i = 0; i < addFunds.amount; i++) {
                     tokenRegistry.getAll().then(function (all) {
                         var highest = -1;
                         for (var i = 0; i < all.length; i++) {
@@ -32,13 +33,19 @@ function onAddFunds(addFunds) {
                             console.warn('highest', highest);
                         }
                         console.log('lastHighest: ', highest);
-                        var token = factory.newResource('xyz.jefwillems', 'TokenAsset', (highest + 1) + "");
-                        token.validTill = (new Date()).getTime();
+
+                        var token = factory
+                            .newResource('xyz.jefwillems', 'TokenAsset', (highest + 1) + "");
+                        token.expiringDate = addFunds.expiringDate;
+                        token.fruitName = addFunds.name;
+                        token.houdbaarheid = addFunds.houdbaarheid;
+                        token.location = addFunds.location;
                         tokenRegistry.add(token);
 
                         user.tokens.push(token);
                         assetRegistry.update(user);
                     });
+                    //}
                 });
         });
 }

@@ -18,11 +18,18 @@ asset UserAsset identified by email {
 
 asset TokenAsset identified by assetId {
   o String assetId
-  o Long validTill
+  o String fruitName
+  o Long expiringDate
+  o String houdbaarheid
+  o String location
 }
 
 transaction AddFunds {
   o Long amount
+  o String name
+  o Long expiringDate
+  o String houdbaarheid
+  o String location
   --> UserAsset receiving
 }
 
@@ -30,3 +37,4 @@ transaction AddUser {
   o String email
   o String name
 }
+
