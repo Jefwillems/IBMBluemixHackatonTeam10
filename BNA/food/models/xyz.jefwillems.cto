@@ -10,18 +10,23 @@ participant User identified by email {
   --> TokenAsset[] tokens
 }
 
-asset TokenAsset identified by assetId {
-  o String assetId
-  o String value
-  o String validTill
+asset UserAsset identified by email {
+  o String email
+  o String name
+  --> TokenAsset[] tokens
 }
 
-/*transaction ChangeAssetValue {
-  o String newValue
-  --> Asset relatedAsset
-}*/
+asset TokenAsset identified by assetId {
+  o String assetId
+  o Long validTill
+}
 
-transaction transactionName {
+transaction AddFunds {
   o Long amount
-  --> User receiving
+  --> UserAsset receiving
+}
+
+transaction AddUser {
+  o String email
+  o String name
 }
