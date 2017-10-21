@@ -7,14 +7,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="70dp">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="goScanFromResult"
-            android:text="@string/scan" />
+            android:text="@string/scan"/>
 
         <Button
             android:layout_width="0dp"
@@ -29,19 +30,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingEnd="16dp"
-        android:paddingStart="16dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="product name: " />
+        android:paddingStart="16dp"
+        android:paddingBottom="15dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Apple" />
+            android:text="product name: "
+            android:paddingLeft="20dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Apple"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -49,19 +55,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingEnd="16dp"
-        android:paddingStart="16dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="usability" />
+        android:paddingStart="16dp"
+        android:paddingBottom="15dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Food Bank" />
+            android:text="usability:"
+            android:paddingLeft="20dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="YES"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -69,19 +80,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingEnd="16dp"
-        android:paddingStart="16dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="expires in: " />
+        android:paddingStart="16dp"
+        android:paddingBottom="15dp"
+        >
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="5 days" />
+            android:text="expires in: "
+            android:paddingLeft="20dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="5 days"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -89,19 +106,63 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingEnd="16dp"
-        android:paddingStart="16dp">
+        android:paddingStart="16dp"
+        android:paddingBottom="15dp">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Optimal Location" />
+            android:layout_weight="2"
+            android:text="Optimal Location:"
+            android:paddingLeft="20dp"
+            android:textSize="20dp"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="'Povorello vzw'" />
+            android:text="'Povorello vzw'"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="amount of tokens: "
+            android:paddingLeft="20dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="1"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="send" />
+
+    </RelativeLayout>
 </LinearLayout>

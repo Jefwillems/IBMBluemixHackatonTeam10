@@ -21,8 +21,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
-    private GalleryHelper gHelper = new GalleryHelper(MainActivity.this);
-    private File imageFile;
+    //private GalleryHelper gHelper = new GalleryHelper(MainActivity.this);
+    //private File imageFile;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 //                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 //                byte[] imageInByte = stream.toByteArray();
 //                ByteArrayInputStream bis = new ByteArrayInputStream(imageInByte);
-        ActivityCompat.requestPermissions(this,
+        /*ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                 112);
-        gHelper.dispatchGalleryIntent();
+        gHelper.dispatchGalleryIntent();*/
 
     }
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GalleryHelper.PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
@@ -84,5 +84,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 }
